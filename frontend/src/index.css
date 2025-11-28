@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero-bg{
+    /* background-image:linear-gradient(rgba(40, 187, 27, 0.4),rgba(187, 6, 6, 0.2)) ,url("/hero.png"); */
+    background-image:linear-gradient(rgba(0, 0, 07, 0.8),rgba(0, 06, 06, 0.2)) ,url("/hero.png");
+}
+
+.shimmer{
+   
+    animation: shimmer 10s infinite linear ;
+    background: linear-gradient(to right, #2c2c2c 4%,#333 25%,#2c2c2c 36% );
+    background-size: 1000px  100%;
+   
+
+}
+
+
+
+@keyframes shimmer{
+    0%{
+        background-position: -1000px 0;
+    }
+   100%{
+        background-position: 1000px 0 ;
+    }
+}
+
+@keyframes pulse{
+    20%{
+        opacity: .8;
+    }
+    70%{
+        opacity: .9;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.error-page::before{
+    background: radial-gradient(ellipse at center, rgba(23, 3, 3, 0.073) 0 ,rgba(148, 124, 124, 0.044) 45% , 
+    rgba(49, 4, 4, 0.255) 70%, transparent 80%);
+    bottom: -10vw;
+    left: 10vw;
+    top: -10vw;
+    right: 10vw;
+    position: absolute;
+   
+    z-index: -1;
+}
