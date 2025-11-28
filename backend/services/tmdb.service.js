@@ -12,7 +12,7 @@ const options = {
   }
 };
 
-console.log("api key is", ENV_VARS.TMDB_API_KEY)
+
 
 const response = await axios.get(url,options)
 

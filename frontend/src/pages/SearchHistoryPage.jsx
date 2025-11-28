@@ -4,7 +4,8 @@ import toast from "react-hot-toast";
 import Navbar from "../components/Navbar";
 import { SMALL_IMG_BASE_URL } from "../utils/constants";
 import { formatReleaseDate as formatDate } from "../utils/formatDate.js";
-import { Trash, Trash2, Trash2Icon } from "lucide-react";
+import { Trash2 } from "lucide-react";
+
 const SearchHistoryPage = () => {
   const [searchHistory, setSearchHistory] = useState([]);
 
@@ -61,10 +62,11 @@ const SearchHistoryPage = () => {
               <img
                 src={SMALL_IMG_BASE_URL + item.image}
                 alt={item.title}
-                className="rounded-full object-cover  mr-4 size-20"
+                className="rounded-full object-cover  mr-4 size-20 cursor-cell"
+                
               />
               <div className="flex flex-col gap-1  ">
-                <p className="text-sm font-bold">{item.title}</p>
+                <p className="text-sm font-bold" >{item.title}</p>
                 <p className="text-sm text-white/70">
                   {formatDate(item.createdAt)}
                 </p>

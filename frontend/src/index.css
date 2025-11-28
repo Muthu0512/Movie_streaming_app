@@ -52,14 +52,15 @@
 }
 
 ::-webkit-scrollbar{
-    width: 10px;
+    width: 8px;
     
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color : red;
-    border-radius:8px;
+    background-color : rgba(255, 0, 0, 0.643);
+    border-radius:40%;
 }
 ::-webkit-scrollbar-track{
-    background-color: black;
+    background-color:rgba(0, 0, 0, 0.673);
+    
 }
