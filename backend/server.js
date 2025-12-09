@@ -5,7 +5,7 @@ import movieRoutes from "./routes/movie.route.js";
 import tvRoutes from "./routes/tv.route.js";
 import searchRoutes from "./routes/search.route.js";
 import path from "path";
-
+import cors from "cors"
 import { protectRoute } from "./middleware/protectRoute.js";
 import { ENV_VARS } from "./config/envVar.js";
 import connectDB from "./config/db.js";
@@ -13,6 +13,7 @@ import connectDB from "./config/db.js";
 const app = express();
 app.use(express.json()); //allow us to use parse req.body   e.g {abc,cde}=req.body
 app.use(cookieParser());
+app.use(cors())
 
 const PORT = ENV_VARS.PORT;
 const __dirname = path.resolve();
