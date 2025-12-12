@@ -38,7 +38,7 @@ const LoginPage = () => {
           focus:outline-none focus:ring" id="password" value={password} onChange={(e)=> setPassword(e.target.value)} />
          </section>
          <button className="w-full py-2 bg-red-500 text-white font-semibold border rounded-md hover:bg-red-800 border-none">
-       {isLoggingIn ? "Loading..." : "Login"}
+       {isLoggingIn ? "Loading...." : "Login"}
          </button>
               </form>
               <div className="text-center text-white/70 text-2xl  ">
