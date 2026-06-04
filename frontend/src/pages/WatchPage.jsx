@@ -73,6 +73,8 @@ const WatchPage = () => {
     }
   }
 
+  
+
   const scrollLeft = () => {
     if (sliderRef.current) {
       sliderRef.current.scrollBy({
@@ -117,7 +119,7 @@ const WatchPage = () => {
       <div className="mx-auto container px-4 py-10 h-full ">
         <Navbar />
         {trailers.length > 0 && (
-          <div className="flex justify-between items-center my-4">
+          <div className="flex justify-between items-center x-4">
             <button
               className={`bg-gray-700/60 hover:bg-gray-700 text-white px-5 py-2 rounded-lg ${
                 currentTrailerIdx === 0 ? "opacity-40 cursor-not-allowed  " : ""
@@ -161,7 +163,7 @@ const WatchPage = () => {
             </h2>
           )}
         </div>
-        <div className="flex flex-col md:flex-row justify-between items-center gap-28 max-w-6xl px-20 mb-4 md:mb-8 ">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-10 sm:gap-28 max-w-6xl px-20 mb-4 md:mb-8 ">
           <div className="flex flex-col font-white text-center">
             <h2 className="text-5xl font-bold mb-4 text-balance">
               {contentDetails?.name || contentDetails?.title}
@@ -193,7 +195,7 @@ const WatchPage = () => {
               Similar Movies / TV Shows
             </h2>
             <div
-              className="flex gap-6 overflow-x-scroll scrollbar-hide  group "
+              className="flex gap-6 overflow-x-scroll scrollbar-hide   "
               ref={sliderRef}
             >
               {similarContent.map((content) => {
@@ -202,11 +204,11 @@ const WatchPage = () => {
                   <Link
                     to={`/watch/${content.id}`}
                     key={content.id}
-                    className="w-52 flex-none"
+                    className="w-52 flex-none group"
                   >
                     <img
                       src={SMALL_IMG_BASE_URL + content?.poster_path}
-                      className="w-90% h-auto rounded-lg"
+                      className="w-90% h-auto rounded-lg group-hover:scale-95 transform-all duration-300"
                     />
                     <h4 className="text-center font-bold text-lg pt-4">
                       {content?.name || content?.title}

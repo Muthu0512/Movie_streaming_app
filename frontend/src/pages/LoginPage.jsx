@@ -15,14 +15,14 @@ const LoginPage = () => {
    login({email,password})
 
   }
-  return <div className="h-screen w-full hero-bg">
+  return <div className="mih-screen w-full hero-bg">
      
     <header className="max-w-6xl mx-auto flex items-center justify-between p-4">
     <Link to={"/"}>
       <img src="/netflix-logo.png" alt="logo" className="w-52"/>
     </Link>
     </header>
-     <div className="flex flex-col justify-center items-center mt-20 mx-3 ">
+     <div className="flex flex-col justify-center items-center mt-14 pb-8  mx-3 ">
         <div className="w-full max-w-md p-4 space-y-4 bg-black/60 rounded-lg shadow-lg">
             <h1 className="text-center text-white text-4xl font-bold my-3">Login</h1>
                <form className="space-y-4" onSubmit={handleLogin}>

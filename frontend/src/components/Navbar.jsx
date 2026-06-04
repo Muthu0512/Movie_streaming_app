@@ -13,10 +13,10 @@ const Navbar = () => {
         setIsMobileView(!isMobileView)
     }
      const {contentType,setContentType}=useContentStore()
- 
+  
   return (
-    
-        <header className='max-w-8xl mx-auto flex flex-wrap gap-2 justify-between items-center p-4 h-20  bg-black/ 80 text-white '>
+        
+        <header className=' max-w-8xl mx-auto flex flex-wrap gap-2 justify-between items-center p-4 h-20  bg-black/ 80 text-white '>
             <div className='flex items-center gap-10 z-50'>
                 <Link to="/">
                 <img src="/netflix-logo.png" alt="netflix" className='w-32 sm:w-40' />
@@ -65,6 +65,7 @@ const Navbar = () => {
             </div>)}
             
         </header>
+        
   
   )
 }
