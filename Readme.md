@@ -32,6 +32,10 @@ https://movie-streaming-app-8d90.onrender.com/
 | React Router ---------- Client-side Routing 
 | Axios-------- HTTP Requests 
 
+
+
+
+
 ### Backend
 | Node.js ------ Runtime Environment 
 | Express.js -------- REST API Server 
