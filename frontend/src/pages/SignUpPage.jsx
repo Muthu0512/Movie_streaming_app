@@ -1,7 +1,7 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { useAuthStore } from "../store/authUser";
+import PasswordReveal from "../components/PasswordReveal"
 
 
 const SignUpPage = () => {
@@ -10,6 +10,7 @@ const SignUpPage = () => {
   const [email,setEmail]=useState(emailValue || "")
   const [username,setUsername]=useState("")
   const [password,setPassword]=useState("")
+  const [showPassword,setShowPassword] = useState(false)
 
   const {signup,isSigningUp} =useAuthStore()
   
@@ -28,7 +29,7 @@ const SignUpPage = () => {
       <img src="/netflix-logo.png" alt="logo" className="w-52"/>
     </Link>
     </header>
-     <div className="flex flex-col justify-center items-center mt-20 mx-3 pb-8 h-screen ">
+     <div className="flex flex-col justify-center items-center mt-20  sm:m-5 mx-3 pb-20 sm:pb-8 h-screen ">
         <div className="w-full max-w-md p-4 space-y-4 bg-black/60 rounded-lg shadow-md">
             <h1 className="text-center text-white text-4xl font-bold my-3">Sign Up</h1>
                <form className="space-y-4" onSubmit={handleSignUp}>
@@ -42,10 +43,11 @@ const SignUpPage = () => {
           <input type="text" placeholder="your name" className="w-full px-2 py-3 mt-1 border border-gray-500 rounded-lg bg-transparent text-white text-lg
           focus:outline-none focus:ring" id="username" value={username} onChange={(e)=>setUsername(e.target.value)} />
          </section>
-         <section >
+         <section  className="relative">
           <label htmlFor="password" className="text-lg font-medium text-gray-400 block">Password</label>
-          <input type="password" placeholder= "******" className="w-full px-2 py-3 mt-1 border border-gray-500 rounded-lg bg-transparent text-white text-lg
+          <input type={showPassword? "text":"password"} placeholder= "******" className="relative w-full px-2 py-3 mt-1 border border-gray-500 rounded-lg bg-transparent text-white text-lg
           focus:outline-none focus:ring" id="password" value={password} onChange={(e)=> setPassword(e.target.value)} />
+          <PasswordReveal showPassword={showPassword} setShowPassword={setShowPassword}/>
          </section>
          <button className="w-full py-2 bg-red-500 text-white font-semibold border rounded-md hover:bg-red-800 border-none">
        {isSigningUp ? "Loading ..." : "Sign Up"}

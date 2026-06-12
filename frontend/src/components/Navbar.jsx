@@ -41,7 +41,10 @@ const Navbar = () => {
                     <Link to={"/search"}>
                     <Search className='size-6 cursor-pointer'/>
                     </Link>
-                    <img src={user.image} alt="Profile-pic" className='h-8 rounded'/>
+                    {/* <img src={user.image} alt="Profile-pic" className='h-8 rounded'/> */}
+                   <div className='relative group '><img src={user.image} alt="Profile-pic" className='relative h-8 cursor-progress rounded '/>
+                    <p className= 'absolute w-fit bg-white text-red-800 font-bold opacity-90 px-4 py-1 text-xs  rounded-lg top-[120%] -right-12 hidden group-hover:block transition-all duration-100 '>In progress...</p>
+                    </div>
                     
                     <LogOut className="size-6 cursor-pointer" onClick={logout}/>
                     <div className='sm:hidden '>
